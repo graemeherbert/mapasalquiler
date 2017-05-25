@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 					var div = L.DomUtil.create('div', 'info legend'),
 					    grades = [1, 7, 10, 13, 16, 19, 22],
-					    labels = ['<strong>Precio del alquiler/m²]</strong>'];
+					    div.innerHTML +='<strong>Precio del alquiler por m²]</strong><br>';
 
 					// loop through our density intervals and generate a label with a colored square for each interval
 					for (var i = 0; i < grades.length; i++) {
