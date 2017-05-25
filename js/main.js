@@ -30,12 +30,12 @@ function getStyleForFeature(f,l){
 }
 
 function getStyleColour(val){
-                return  val >= 22 ? '#e31a1c':
-                        val >= 19 ? '#fc4e2a':
-                        val >= 16 ? '#fd8d3c':
-                        val >= 13 ? '#feb24c':
-                        val >= 10 ? '#fed976':
-                        val >= 7  ? '#ffeda0':
+                return  val > 22 ? '#e31a1c':
+                        val > 19 ? '#fc4e2a':
+                        val > 16 ? '#fd8d3c':
+                        val > 13 ? '#feb24c':
+                        val > 10 ? '#fed976':
+                        val > 7  ? '#ffeda0':
                                   '#ffffcc';
 };
 
