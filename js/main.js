@@ -85,7 +85,13 @@ $(document).ready(function(){
 
 		    
   
-		    mymap = L.map('map');
+		    mymap = L.map('map', {zoomControl: false});
+
+		    // Add our zoom control manually where we want to
+                    var zoomControl = L.control.zoom({
+					position: 'topright'
+                    });
+                    mymap.addControl(zoomControl);
 
 		     
 		    // create the tile layer with correct attribution
