@@ -94,9 +94,9 @@ $(document).ready(function(){
 		    //var osm = new L.StamenTileLayer("toner", {minZoom: 4, maxZoom: 12});
 		    var osm= L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-		    }).addTo(map);
+		    }).addTo(mymap);
 		    mymap.setView(new L.LatLng(cityLookup[currentCity][0], cityLookup[currentCity][1]),11);
-		    mymap.addLayer(osm);
+		    //mymap.addLayer(osm);
 
 		    mymap.addLayer(jsonLayer);
 		    // set the zoom limits for the map
