@@ -30,12 +30,12 @@ function getStyleForFeature(f,l){
 }
 
 function getStyleColour(val){
-                return  val > 22 ? '#e31a1c':
-                        val > 19 ? '#fc4e2a':
-                        val > 16 ? '#fd8d3c':
-                        val > 13 ? '#feb24c':
-                        val > 10 ? '#fed976':
-                        val > 7  ? '#ffeda0':
+                return  val >= 22 ? '#e31a1c':
+                        val >= 19 ? '#fc4e2a':
+                        val >= 16 ? '#fd8d3c':
+                        val >= 13 ? '#feb24c':
+                        val >= 10 ? '#fed976':
+                        val >= 7  ? '#ffeda0':
                                   '#ffffcc';
 };
 
@@ -108,6 +108,24 @@ $(document).ready(function(){
 		    // set the zoom limits for the map
 		    mymap.options.maxZoom = 15;
 		    mymap.options.minZoom = 6;
+
+		    var legend = L.control({position: 'bottomright'});
+
+		    legend.onAdd = function (mymap) {
+
+					var div = L.DomUtil.create('div', 'info legend'),
+					    grades = [1, 7, 10, 13, 16, 19, 22],
+					    labels = [];
+
+					// loop through our density intervals and generate a label with a colored square for each interval
+					for (var i = 0; i < grades.length; i++) {
+							    div.innerHTML +=
+							    '<i style="background:' + getColor(grades[i+1]) + '"></i> ' +
+							    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+					}
+
+					return div;
+		    };
 });
 
 
