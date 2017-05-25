@@ -127,7 +127,7 @@ $(document).ready(function(){
 					return div;
 		    };
 
-		    legend.addTo(map);
+		    legend.addTo(mymap);
 });
 
 
