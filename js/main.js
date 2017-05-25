@@ -89,10 +89,10 @@ $(document).ready(function(){
 
 		     
 		    // create the tile layer with correct attribution
-		    var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		    var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 		    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 		    //var osm = new L.StamenTileLayer("toner", {minZoom: 4, maxZoom: 12});
-		    var osm= L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		    var osm= L.tileLayer(osmUrl, {
 					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		    }).addTo(mymap);
 		    mymap.setView(new L.LatLng(cityLookup[currentCity][0], cityLookup[currentCity][1]),11);
